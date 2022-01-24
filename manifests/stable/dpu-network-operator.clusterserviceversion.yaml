@@ -11,6 +11,7 @@ metadata:
             "name": "ovnkubeconfig-sample"
           },
           "spec": {
+            "kubeConfigFile": "tenant-cluster-1-kubeconf",
             "nodeSelector": {
               "matchLabels": {
                 "node-role.kubernetes.io/dpu-worker": ""
@@ -131,6 +132,18 @@ spec:
           - machineconfiguration.openshift.io
           resources:
           - machineconfigpools
+          verbs:
+          - create
+          - delete
+          - get
+          - list
+          - patch
+          - update
+          - watch
+        - apiGroups:
+          - machineconfiguration.openshift.io
+          resources:
+          - machineconfigs
           verbs:
           - create
           - delete
